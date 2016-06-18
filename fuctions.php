@@ -1,10 +1,21 @@
 <?php
+    //TODO подумай над именами переменных!
+    //Пробегаем по бд и показываем картинки
     function show_images($images){
         foreach ($images as &$value) {
-            echo ('id =' . $value['id']. '<br>');
-            echo ('name =' . $value['name']. '<br>');
-            echo ('name_mini =' . $value['name_mini']. '<br>');
-            echo ('views =' . $value['views'] . '<br>');
+            $show_image = $value['name'];
+            echo (
+                "
+                    <div class='omg'>
+                        <img src='img/mini/$show_image' />
+                        <!--тут передаём как параметр-->
+                        <a class='text' href='image.php?image=$show_image'> Просмотреть изображение</a>
+                    </div>
+                "
+
+
+
+            );
         }
     }
 
@@ -17,7 +28,7 @@
             echo 'Файл не выбран!';
             return;
         }
-        if(copy($file['tmp_name'], 'img/'.$file['name'])){
+        if(copy($file['tmp_name'], 'img/original/'.$file['name'])){
             copy($file['tmp_name'], 'img/mini/'.$file['name']);//TODO вынеси тогда в создание мини картинки
             create_thumb('img/mini/'.$file['name']);
             $file = $_FILES['file'];

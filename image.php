@@ -14,7 +14,7 @@
 
         </div>
         <div id = "body">
-            <img src="img/<?php echo $image;?>"/>
+            <img src="img/original/<?php echo $image;?>"/>
         </div>
         <div id = "подвал">
 
