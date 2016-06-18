@@ -1,0 +1,16 @@
+#button{
+     background-color: red;
+ }
+.omg{
+    float: left;
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+.text{
+    clear: left;
+    display: block;
+}
