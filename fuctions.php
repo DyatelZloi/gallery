@@ -1,20 +1,20 @@
 <?php
     //TODO подумай над именами переменных!
+    //TODO возможно нужно делать перенаправление
     //Пробегаем по бд и показываем картинки
     function show_images($images){
         foreach ($images as &$value) {
             $show_image = $value['name'];
+            $views = $value['views'];
+            $id = $value['id'];
             echo (
                 "
                     <div class='omg'>
                         <img src='img/mini/$show_image' />
                         <!--тут передаём как параметр-->
-                        <a class='text' href='image.php?image=$show_image'> Просмотреть изображение</a>
+                        <a class='text' href='image.php?image=$show_image&views=$views&id=$id'> Просмотреть изображение</a>
                     </div>
                 "
-
-
-
             );
         }
     }

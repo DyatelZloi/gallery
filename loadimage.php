@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8"/>
         <title>Загрузка файла на сервер</title>
     </head>
     <body>
+        <a href="index.php">На главную</a>
         <?php
             include 'fuctions.php';
             if (isset($_FILES['file']))
